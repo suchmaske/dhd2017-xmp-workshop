@@ -4,8 +4,8 @@
 ## Installation
 
 ### Download (Windows + MacOS)
-Download: http://www.sno.phy.queensu.ca/~phil/exiftool/
-Anleitung: http://www.sno.phy.queensu.ca/~phil/exiftool/install.html
+* Download: http://www.sno.phy.queensu.ca/~phil/exiftool/
+* Anleitung: http://www.sno.phy.queensu.ca/~phil/exiftool/install.html
 
 ### Windows
 * ```exiftool(-k).exe``` zu ```exiftool.exe``` umbennen und nach ```C:\Windows``` verschieben.
@@ -178,5 +178,3 @@ $ exiftool -X img/csm_Adolfseck_Hl_Familie.jpg
         ```
     
 * (Struct)
-
-
