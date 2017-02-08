@@ -54,7 +54,7 @@ $ exiftool -X img/csm_Adolfseck_Hl_Familie.jpg
     - Generell: ```-xmp-[ns]:[feld]```
         + ns (Namensraum), zB. dc (Dublin Core)
         + feld (Feld im Namensraum), title
-        + => -xmp-dc:title
+        + => ```-xmp-dc:title```
     
     - Beispiel
     ```
@@ -89,15 +89,94 @@ $ exiftool -X img/csm_Adolfseck_Hl_Familie.jpg
 ### Konfiguration laden
 
 * Syntax
+
+    - Allgemein
+    ```
+    $ exiftool -config [config-file] [befehl]
+    ```
+    > Stellt sicher, dass Felder aus eigenen Vokabularen und Standards gelesen werden können
+    
+    - Beispiel
+    ```
+    $ exiftool -config conf/cvma.Exiftool_config img/csm_Adolfseck_Hl_Familie.jpg
+    ```
+    > Felder aus dem CVMA-eigenen Standard werden nun gelesen
+    
+
 * Feld aus dem eigenen Standard auslesen
+
+    - Gleiches Prinzip wie beim Auslesen anderer Felder: ```-xmp-[ns]:[feld]```
+    
+    - Beispiel
+    ```
+    $ exiftool -config conf/cvma.Exiftool_config -xmp-cvma:IconclassDescription img/csm_Adolfseck_Hl_Familie.jpg
+    ```
+
 * Konfiguration anschauen
+
+    - Perl-Datei (exiftool ist eine Perl-Library)
+    
+    ```
+    %Image::ExifTool::UserDefined::cvma = (
+        GROUPS => { 0 => 'XMP', 1 => 'XMP-cvma', 2 => 'Image' },
+        NAMESPACE => { 'cvma' => 'http://www.corpusvitrearum.de/cvma/1.0/' },
+        
+        ...
+        IconclassDescription => { },
+        ...
+        )
+    ```
+    > CVMA-Namensraum und dazugehörige Felder werden definiert.
+    
+    - Konfiguration wird zum Auslesen und Manipulieren benötigt!
 
 ### Daten eingeben
 
 * Generelle Syntax
-* Ein Feld
+
+    - Allgemein: ```-xmp-[ns]:[feld]=[wert] [datei]```
+        + ns (Namensraum), zB. dc (Dublin Core)
+        + feld (Feld im Namensraum), title
+        + => ```-xmp-dc:title=Kirchenfenster```
+
+    - Beispiel (ohne Config)
+    ```
+    $ exiftool -xmp-dc:title=Kirchenfenster img/csm_Adolfseck_Hl_Familie.jpg
+    ```
+    
 * Mehrere Felder
-* (Bags)
+
+    - Allgemein: 
+    ```
+    $ exiftool -xmp-[ns]:[feld_1]=[wert] ... -xmp-[ns]:[feld_n]=[wert] [datei]
+    ```
+    
+    - Beispiel:
+    ```
+    $ exiftool -xmp-dc:title=Kirchenfenster -xmp-dc:creator=Me img/csm_Adolfseck_Hl_Familie.jpg
+    ```
+    
+* Bags (Listen)
+
+    > Mehrere Einträge im selbsen Feld
+    
+    - In der Konfigurationsdatei muss das Feld als Bag deklariert sein
+    ```
+    IconclassNotation => { List => 'Bag' },
+    ```
+    
+    - Dasselbe Feld mehrmals beschreiben
+    
+        + Allgemein
+        ```
+        $ exiftool -config [config] -xmp-[ns]:[feld_x]=[wert_1] -xmp-[ns]:[feld_x]=[wert_2] [datei]
+        ```
+    
+        + Beispiel
+        ```
+        $ exiftool -config conf/cvma.ExifTool_config -xmp-cvma:IconclassNotation=73A22 -xmp-cvma:IconclassNotation=SomethingDifferent img/csm_Adolfseck_Hl_Familie.jpg 
+        ```
+    
 * (Struct)
 
 
