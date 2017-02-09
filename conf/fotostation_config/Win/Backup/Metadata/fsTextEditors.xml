@@ -1,0 +1,1421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FotoWare_Settings>
+	<Group name="Text Editors">
+		<Int name="numEditors">1</Int>
+		<Struct name="te[0]">
+			<String name="name">CVMA</String>
+			<Int name="fAllowMissingRequiredFields">0</Int>
+			<Int name="fAllowDataBaseConnection">0</Int>
+			<String name="odbcConfigName"></String>
+			<Int name="fAllowDataBaseUpdate">0</Int>
+			<Int name="fUseGlobalLabel">1</Int>
+			<String name="odbcConfigName_update"></String>
+			<Int name="autoExecMacro">0</Int>
+			<String name="autoExecMacroName"></String>
+			<Int name="numPages">9</Int>
+			<Int name="numGroups">0</Int>
+			<Struct name="page[0]">
+				<String name="name">Allgemein</String>
+				<Int name="showPreview">0</Int>
+				<Struct name="pos">
+					<Int name="x">20</Int>
+					<Int name="y">20</Int>
+				</Struct>
+				<Struct name="size">
+					<Int name="x">150</Int>
+					<Int name="y">150</Int>
+				</Struct>
+				<Int name="numItems">5</Int>
+				<Struct name="item[0]">
+					<Int name="id">5</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">33</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">201</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">0</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">1</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[1]">
+					<Int name="id">524</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">60</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">200</Int>
+						<Int name="y">149</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">1</Int>
+					<Int name="editQuickList">0</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">0</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[2]">
+					<Int name="id">525</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">210</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">200</Int>
+						<Int name="y">149</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">1</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">1</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[3]">
+					<Int name="id">518</Int>
+					<Struct name="pos">
+						<Int name="x">260</Int>
+						<Int name="y">33</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">156</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">0</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[4]">
+					<Int name="id">504</Int>
+					<Struct name="pos">
+						<Int name="x">260</Int>
+						<Int name="y">73</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">156</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">0</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+			</Struct>
+			<Struct name="page[1]">
+				<String name="name">Aufnahme</String>
+				<Int name="showPreview">0</Int>
+				<Struct name="pos">
+					<Int name="x">20</Int>
+					<Int name="y">20</Int>
+				</Struct>
+				<Struct name="size">
+					<Int name="x">150</Int>
+					<Int name="y">150</Int>
+				</Struct>
+				<Int name="numItems">5</Int>
+				<Struct name="item[0]">
+					<Int name="id">600</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">193</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">261</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">0</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[1]">
+					<Int name="id">527</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">33</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">281</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">0</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[2]">
+					<Int name="id">514</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">73</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">261</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">1</Int>
+					<Int name="editQuickList">0</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">0</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[3]">
+					<Int name="id">530</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">113</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">261</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">1</Int>
+					<Int name="editQuickList">0</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">0</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[4]">
+					<Int name="id">513</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">153</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">261</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">1</Int>
+					<Int name="editQuickList">0</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">0</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+			</Struct>
+			<Struct name="page[2]">
+				<String name="name">Ort</String>
+				<Int name="showPreview">0</Int>
+				<Struct name="pos">
+					<Int name="x">20</Int>
+					<Int name="y">20</Int>
+				</Struct>
+				<Struct name="size">
+					<Int name="x">150</Int>
+					<Int name="y">150</Int>
+				</Struct>
+				<Int name="numItems">15</Int>
+				<Struct name="item[0]">
+					<Int name="id">599</Int>
+					<Struct name="pos">
+						<Int name="x">360</Int>
+						<Int name="y">393</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">281</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">0</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[1]">
+					<Int name="id">503</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">33</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">156</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">1</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">0</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">0</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[2]">
+					<Int name="id">511</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">73</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">156</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">0</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[3]">
+					<Int name="id">517</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">113</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">156</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">0</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[4]">
+					<Int name="id">502</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">153</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">156</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">0</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[5]">
+					<Int name="id">531</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">193</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">281</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">1</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">1</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[6]">
+					<Int name="id">532</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">233</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">281</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">1</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">1</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[7]">
+					<Int name="id">533</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">273</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">281</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">1</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">1</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[8]">
+					<Int name="id">569</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">313</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">281</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">1</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">1</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[9]">
+					<Int name="id">535</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">353</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">281</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">1</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">1</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[10]">
+					<Int name="id">512</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">393</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">281</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">1</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">1</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[11]">
+					<Int name="id">355</Int>
+					<Struct name="pos">
+						<Int name="x">360</Int>
+						<Int name="y">273</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">281</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">0</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[12]">
+					<Int name="id">356</Int>
+					<Struct name="pos">
+						<Int name="x">360</Int>
+						<Int name="y">313</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">281</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">0</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[13]">
+					<Int name="id">536</Int>
+					<Struct name="pos">
+						<Int name="x">360</Int>
+						<Int name="y">340</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">280</Int>
+						<Int name="y">36</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">0</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[14]">
+					<Int name="id">505</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">453</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">621</Int>
+						<Int name="y">36</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">1</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">1</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+			</Struct>
+			<Struct name="page[3]">
+				<String name="name">Scheibe</String>
+				<Int name="showPreview">0</Int>
+				<Struct name="pos">
+					<Int name="x">20</Int>
+					<Int name="y">20</Int>
+				</Struct>
+				<Struct name="size">
+					<Int name="x">150</Int>
+					<Int name="y">150</Int>
+				</Struct>
+				<Int name="numItems">7</Int>
+				<Struct name="item[0]">
+					<Int name="id">509</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">33</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">191</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">0</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[1]">
+					<Int name="id">510</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">73</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">191</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">0</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[2]">
+					<Int name="id">508</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">113</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">191</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">0</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[3]">
+					<Int name="id">590</Int>
+					<Struct name="pos">
+						<Int name="x">260</Int>
+						<Int name="y">33</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">156</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">0</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[4]">
+					<Int name="id">501</Int>
+					<Struct name="pos">
+						<Int name="x">260</Int>
+						<Int name="y">73</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">156</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">1</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[5]">
+					<Int name="id">500</Int>
+					<Struct name="pos">
+						<Int name="x">260</Int>
+						<Int name="y">113</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">156</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">1</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[6]">
+					<Int name="id">516</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">183</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">397</Int>
+						<Int name="y">36</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">1</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+			</Struct>
+			<Struct name="page[4]">
+				<String name="name">Personen_und_Koerperschaften</String>
+				<Int name="showPreview">0</Int>
+				<Struct name="pos">
+					<Int name="x">20</Int>
+					<Int name="y">20</Int>
+				</Struct>
+				<Struct name="size">
+					<Int name="x">150</Int>
+					<Int name="y">150</Int>
+				</Struct>
+				<Int name="numItems">3</Int>
+				<Struct name="item[0]">
+					<Int name="id">522</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">33</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">711</Int>
+						<Int name="y">57</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">0</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[1]">
+					<Int name="id">521</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">113</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">711</Int>
+						<Int name="y">67</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">0</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[2]">
+					<Int name="id">523</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">203</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">711</Int>
+						<Int name="y">67</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">0</Int>
+					<Int name="editQuickList">0</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+			</Struct>
+			<Struct name="page[5]">
+				<String name="name">Iconclass</String>
+				<Int name="showPreview">0</Int>
+				<Struct name="pos">
+					<Int name="x">20</Int>
+					<Int name="y">20</Int>
+				</Struct>
+				<Struct name="size">
+					<Int name="x">150</Int>
+					<Int name="y">150</Int>
+				</Struct>
+				<Int name="numItems">2</Int>
+				<Struct name="item[0]">
+					<Int name="id">507</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">20</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">361</Int>
+						<Int name="y">31</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">1</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[1]">
+					<Int name="id">506</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">73</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">697</Int>
+						<Int name="y">54</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">1</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+			</Struct>
+			<Struct name="page[6]">
+				<String name="name">Rechte</String>
+				<Int name="showPreview">0</Int>
+				<Struct name="pos">
+					<Int name="x">20</Int>
+					<Int name="y">20</Int>
+				</Struct>
+				<Struct name="size">
+					<Int name="x">150</Int>
+					<Int name="y">150</Int>
+				</Struct>
+				<Int name="numItems">7</Int>
+				<Struct name="item[0]">
+					<Int name="id">317</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">33</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">401</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">1</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">0</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[1]">
+					<Int name="id">80</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">60</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">441</Int>
+						<Int name="y">32</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">1</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">1</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[2]">
+					<Int name="id">319</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">100</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">441</Int>
+						<Int name="y">32</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">1</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">1</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[3]">
+					<Int name="id">526</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">140</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">441</Int>
+						<Int name="y">32</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">1</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">1</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[4]">
+					<Int name="id">110</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">223</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">397</Int>
+						<Int name="y">32</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">1</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">1</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[5]">
+					<Int name="id">315</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">281</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">401</Int>
+						<Int name="y">29</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">1</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">1</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[6]">
+					<Int name="id">316</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">333</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">401</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">1</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+			</Struct>
+			<Struct name="page[7]">
+				<String name="name">Freigabe_und_Hinweise</String>
+				<Int name="showPreview">0</Int>
+				<Struct name="pos">
+					<Int name="x">20</Int>
+					<Int name="y">20</Int>
+				</Struct>
+				<Struct name="size">
+					<Int name="x">150</Int>
+					<Int name="y">150</Int>
+				</Struct>
+				<Int name="numItems">2</Int>
+				<Struct name="item[0]">
+					<Int name="id">515</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">33</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">341</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">1</Int>
+					<Int name="editQuickList">0</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">0</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">0</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[1]">
+					<Int name="id">40</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">81</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">361</Int>
+						<Int name="y">139</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">1</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+			</Struct>
+			<Struct name="page[8]">
+				<String name="name">Info</String>
+				<Int name="showPreview">0</Int>
+				<Struct name="pos">
+					<Int name="x">20</Int>
+					<Int name="y">20</Int>
+				</Struct>
+				<Struct name="size">
+					<Int name="x">150</Int>
+					<Int name="y">150</Int>
+				</Struct>
+				<Int name="numItems">10</Int>
+				<Struct name="item[0]">
+					<Int name="id">601</Int>
+					<Struct name="pos">
+						<Int name="x">310</Int>
+						<Int name="y">423</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">221</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">1</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[1]">
+					<Int name="id">540</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">423</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">271</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">0</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[2]">
+					<Int name="id">331</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">373</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">231</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">1</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[3]">
+					<Int name="id">330</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">333</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">231</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">1</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[4]">
+					<Int name="id">65</Int>
+					<Struct name="pos">
+						<Int name="x">310</Int>
+						<Int name="y">333</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">181</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">1</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[5]">
+					<Int name="id">350</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">253</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">271</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">0</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">0</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[6]">
+					<Int name="id">325</Int>
+					<Struct name="pos">
+						<Int name="x">310</Int>
+						<Int name="y">373</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">221</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">0</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">0</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[7]">
+					<Int name="id">357</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">293</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">271</Int>
+						<Int name="y">18</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">0</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">0</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[8]">
+					<Int name="id">25</Int>
+					<Struct name="pos">
+						<Int name="x">20</Int>
+						<Int name="y">20</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">271</Int>
+						<Int name="y">221</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">0</Int>
+					<Int name="editQuickList">0</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">1</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+				<Struct name="item[9]">
+					<Int name="id">120</Int>
+					<Struct name="pos">
+						<Int name="x">310</Int>
+						<Int name="y">33</Int>
+					</Struct>
+					<Struct name="size">
+						<Int name="x">221</Int>
+						<Int name="y">277</Int>
+					</Struct>
+					<Int name="showLabel">1</Int>
+					<Int name="hasQuickList">0</Int>
+					<Int name="editQuickList">1</Int>
+					<Int name="isRequired">0</Int>
+					<Int name="isWritable">0</Int>
+					<Int name="isDBKey">0</Int>
+					<Int name="dbConnectionId">0</Int>
+					<Int name="addQuickList">0</Int>
+					<Int name="sortQuickList">1</Int>
+					<String name="label"></String>
+					<Int name="sortListBox">1</Int>
+				</Struct>
+			</Struct>
+			<Struct name="labelFont">
+				<String name="name">Tahoma</String>
+				<Int name="height">-8</Int>
+				<Int name="weight">400</Int>
+				<Int name="italic">0</Int>
+			</Struct>
+			<Struct name="groupFont">
+				<String name="name">Tahoma</String>
+				<Int name="height">-8</Int>
+				<Int name="weight">400</Int>
+				<Int name="italic">0</Int>
+			</Struct>
+			<Struct name="editFont">
+				<String name="name">Tahoma</String>
+				<Int name="height">-8</Int>
+				<Int name="weight">400</Int>
+				<Int name="italic">0</Int>
+			</Struct>
+			<Struct name="color">
+				<Struct name="bkActive">
+					<Int name="rgbtRed">255</Int>
+					<Int name="rgbtGreen">255</Int>
+					<Int name="rgbtBlue">255</Int>
+				</Struct>
+				<Struct name="bkDisabled">
+					<Int name="rgbtRed">210</Int>
+					<Int name="rgbtGreen">210</Int>
+					<Int name="rgbtBlue">210</Int>
+				</Struct>
+				<Struct name="bkInactive">
+					<Int name="rgbtRed">240</Int>
+					<Int name="rgbtGreen">240</Int>
+					<Int name="rgbtBlue">240</Int>
+				</Struct>
+				<Struct name="bkRequired">
+					<Int name="rgbtRed">255</Int>
+					<Int name="rgbtGreen">255</Int>
+					<Int name="rgbtBlue">0</Int>
+				</Struct>
+			</Struct>
+			<String name="iptcSet"></String>
+			<String name="description"></String>
+		</Struct>
+		<String name="defaultEditor">CVMA</String>
+		<String name="acquireEditorName">Acquire</String>
+		<String name="addTextEditor">Template editor</String>
+		<String name="templeteEditor">Template editor</String>
+		<String name="pdfEditorName">PDF Editor</String>
+		<Struct name="smartReplacement">
+			<String name="controlString">/</String>
+			<String name="homeTeamPrefix">h</String>
+			<String name="visitorTeamPrefix">v</String>
+			<String name="columnDelimiter">#</String>
+		</Struct>
+	</Group>
+</FotoWare_Settings>
