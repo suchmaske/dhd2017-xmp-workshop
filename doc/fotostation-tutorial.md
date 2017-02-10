@@ -131,8 +131,24 @@
 * Metadaten-Ansicht anpassen
 * (Print-Layout anpassen)
 
-## Tests
+## Testmöglichkeiten
 
-* Auslesen der Daten mit exiftool
-* Betrachten der Datei mit einem Texteditor
-* Mit exiftool manipulieren und auslesen
+* Kompatibilität zu exiftool überprüfen
+* Überprüfen, ob die Daten geschrieben wurden
+
+### Test mit exiftool
+
+* Voraussetzung: Das neue Feld in die exiftool-Konfiguration hinzufügen
+  - ```conf/cvma.ExifTool_config``` mit Texteditor bearbeiten
+  - ```Workshop => { }``` in das cvma-Array hinzufügen
+  - Speichern.
+
+* Mit dem Terminal/CMD testen:
+```
+$ exiftool -config conf/cvma.ExifTool_config -xmp-cvma:Workshop img/csm_Adolfseck_Hl_Familie.jpg
+```
+> Output sollte der eingetragene Wert sein
+
+### Test mit Texteditor
+Bild mit Texteditor öffnen (Notepad++)
+![Notepad++: XMP-Daten betrachten](img/notepad/notepad_check_xmp.png)
