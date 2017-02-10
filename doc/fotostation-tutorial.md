@@ -123,13 +123,57 @@
 
 ### Kontrollierte Vokabulare
 
-* Entsprechende Konfigdateien
-* Verknüpfung mit Editor-View
+* Neues Textfeld im cvma-Namensraum anlegen: ```Shared/Metadata/MedataConfiguration.xml```
+  - valueType: Text
+  - guiLabel: Eindruecke
+  - maxSize: 256
+  - id: 778
+  - ns: cvma
+  - fieldType: Bag
+  - name: Impressions
+  - isMultiline: false
+```
+<Field valueType="Text" guiLabel="Eindruecke" maxSize="256" id="778" ns="cvma" fieldType="Bag" name="Impressions" isMultiline="false"/>
+```
 
-### Ansichten anpassen
+* Feld konfigurieren
+  - Feld hinzufügen
+  ![Fotostation: Neues Bag-Feld hinzufügen](img/fotostation/Fotostation_Metadata_edit_view_add_field_bag.png)
 
-* Metadaten-Ansicht anpassen
-* (Print-Layout anpassen)
+  - Feld konfigurieren
+  ![Fotostation: Feld konfigurieren](img/fotostation/Fotostation_Metadata_edit_view_configure_field.png)
+
+  - Folgende Optionen
+    + Element hat Textvorschläge: Nutzern den Zugriff auf eine Vorschlagsliste ermöglichen
+      - Textvorschläge bearbeiten: Nutzer dürfen die Vorschlagsliste erweitern
+      - Textvorschläge automatisch ergänzen: Auto-Complete aktivieren (kann Nachteile haben)
+      - Textvorschläge sortieren: Alphabetische Sortierung
+    + Textfeld bearbeiten
+      - True: Freitext eingaben möglich -> Werte außerhalb der Vorschlagsliste
+      - False: Nur Werte innerhalb der Vorschlagsliste -> kontrolliertes Vokabular
+
+  - Kontrolliertes Vokabular verwalten
+
+    + Option 1: via Fotostation
+      - Textvorschläge bearbeiten aktivieren
+      - In der Bearbeitungsansicht auf den "+"-Button klicken
+      ![Fotostation: Vorschläge bearbeiten](img/fotostation/Fotostation_Metadata_edit_view_field_added_bag.png)
+      ![Fotostation: Vorschläge hinzufügen](img/fotostation/Fotostation_Metadata_suggestions.png)
+      - Danach bei bedarf Vorschlägserweiterung wieder deaktivieren
+
+    + Option 2: Konfigurationsdatei anpassen
+      -  Vorschlagslisten liegen im folgenden Verzeichnis der Fotostation-Konfiguration: ```Win/Backup/Metadata/Quick Lists```
+      - Dort dann die ```ql_[feld_id].txt``` bearbeiten/anlegen
+      - Beispiel: ```ql_778.txt``` bearbeiten/anlegen
+      - Folgende Werte hinzufügen (jede Zeile ein Wert)
+      ```
+      Super
+      Toll
+      Wow
+      Meh
+      ```
+      - Speichern und Konfiguration neu laden
+
 
 ## Testmöglichkeiten
 
