@@ -1,0 +1,1188 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/bbaw.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+
+	<header style="position: absolute;top: 0px; right: 10px; z-index:500; font-size:100px;">
+		<img src="img/BBAW_Logo.png" alt="Berlin-Brandenburgische Akademie der Wissenschaften" style="max-height: 80px;">
+	</header>
+
+	<header style="position: absolute;top: 0px; left: 10px; z-index:500; font-size:100px;">
+		<img src="img/logo_adw.svg" alt="Akademie der Wissenschaften und der Literatur" style="max-height: 80px;">
+	</header>
+
+		<div class="reveal">
+
+
+
+			<div class="slides">
+
+				<!-- Title -->
+				<section>
+
+					Nachhaltiges Metadatenmanagement mit exiftool und FotoStation
+
+					<p>
+						<small>DHd 2017, 14.02.2017</small>
+					</p>
+
+					<p>
+						<small>Oliver Pohl (opohl@bbaw.de), Torsten Schrade (torsten.schrade@adwmainz.de)</small>
+					</p>
+
+				</section>
+
+				<!-- TOC -->
+				<section>
+
+					<section>Ablauf</section>
+
+					<section>
+
+						<h3>
+							Session 1
+						</h3>
+
+						<ul>
+							<li>Einführung XMP</li>
+							<li>
+								Tools
+								<ul>
+									<li>exiftool</li>
+									<li>FotoStation</li>
+									<li>exiftoolGUI</li>
+								</ul>
+							</li>
+						</ul>
+
+					</section>
+
+					<section>
+
+						<h3>Session 2</h3>
+
+						<ul>
+							<li>Eigenes Metadatenschema</li>
+							<li>Implementierung in Tools</li>
+						</ul>
+
+					</section>
+
+				</section>
+
+				<!-- XMP -->
+				<section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					## XMP
+
+					eXtensible Metadata Platform
+					    </script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### Was ist XMP?
+
+					* RDF/XML-basiert
+					* Auszeichnungssprache
+					* Metadaten an Dateien heften
+					* Interpretierbarkeit der Originaldateien nicht gefährden
+					    </script>
+					</section>
+					
+					<section>
+
+						<h2>Dateien und Metadaten</h2>
+
+							<img src="../img/csm_Adolfseck_Hl_Familie.jpg" alt="Adolfseck" style="width: 35%;">
+
+							<- Beziehung ->
+
+<pre style="width: 35%; display: inline-block"><code><rdf:Description rdf:about="http://id.corpusvitrearum.de/images/3431" xmlns:cvma="http://www.corpusvitrearum.de/cvma/1.0/">
+	<cvma:AgeDeterminationEnd>1520-12-31</cvma:AgeDeterminationEnd>
+	<cvma:AgeDeterminationStart>1480-01-01</cvma:AgeDeterminationStart>
+	<cvma:Column>b</cvma:Column>
+	<cvma:Figure>t I</cvma:Figure>
+	<cvma:IconclassDescription>die Heilige Sippe Ahn · Bibel · Eltern · Heilige Sippe · Neues Testament · Verwandtschaft</cvma:IconclassDescription>
+	<cvma:IconclassNotation>73A22</cvma:IconclassNotation>
+	<cvma:Pane>I</cvma:Pane>
+	<cvma:PhotographicType>Einzelaufnahme</cvma:PhotographicType>
+	<cvma:Row>2</cvma:Row>
+	<cvma:Volume>III,2</cvma:Volume>
+</rdf:Description></code>Metadaten</pre>
+
+
+					</section>
+
+					<section>
+
+						<h2>Metadaten mit XMP</h2>
+
+						<div style="background: #C8132B;">
+
+							<h4>Bild und Metadaten als Einheit</h4>
+
+							<img src="../img/csm_Adolfseck_Hl_Familie.jpg" alt="Adolfseck" style="width: 35%;">
+
+							<pre style="width: 35%; display: inline-block"><code><rdf:Description rdf:about="http://id.corpusvitrearum.de/images/3431" xmlns:cvma="http://www.corpusvitrearum.de/cvma/1.0/">
+	<cvma:AgeDeterminationEnd>1520-12-31</cvma:AgeDeterminationEnd>
+	<cvma:AgeDeterminationStart>1480-01-01</cvma:AgeDeterminationStart>
+	<cvma:Column>b</cvma:Column>
+	<cvma:Figure>t I</cvma:Figure>
+	<cvma:IconclassDescription>die Heilige Sippe Ahn · Bibel · Eltern · Heilige Sippe · Neues Testament · Verwandtschaft</cvma:IconclassDescription>
+	<cvma:IconclassNotation>73A22</cvma:IconclassNotation>
+	<cvma:Pane>I</cvma:Pane>
+	<cvma:PhotographicType>Einzelaufnahme</cvma:PhotographicType>
+	<cvma:Row>2</cvma:Row>
+	<cvma:Volume>III,2</cvma:Volume>
+</rdf:Description></code>Metadaten</pre>
+
+						</div>
+
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### Warum XMP?
+
+					* Datenmigration
+						- Einheit von Datei und Metadaten
+					* Langzeitinterpretierbarkeit
+						- XMP-Teil wird von "normalen" Programmen ignoriert
+					* Erweiterbarkeit & Interoperabilität:
+						- RDF/XML-basiert
+					    </script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### Ursprung
+
+					* Von Adobe geschaffener Standard
+					* Erst für PDF
+
+					<hr>
+
+					### Heute
+
+					* Kameras
+					* Digital Asset Management
+					* Photoshop
+					    </script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### XMP - Wie?
+
+					**Lesen - kein Problem**
+
+					* Adobe Produkte
+					* ImageViewer
+					* OS
+					* exiftool, exiv2
+					* FotoStation
+					    </script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### XMP - Wie?
+
+					**Schreiben -- eher problematisch**
+
+					* Adobe Produkte
+						- schreiben nur Foto-relevante Daten
+						- keine Metadatenkonfiguration
+					* ImageViewer
+						- eingeschränkter Schreibzugriff
+					* OS
+						- nur ein paar Standardfelder
+					    </script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### XMP -- Wie?
+
+					**Lösungen**
+
+					* exiftool, (exiv2)
+						- Kommandozeilentool
+						- Plattformunabhängig, FOSS
+						- konfigurierbarer Metadatenstandard
+					* FotoStation
+						- proprietäre Software
+						- konfigurierbarer Metadatenstandard
+						- anpassbare GUIs
+					    </script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					# [kahoot.it](https://www.kahoot.it)
+
+					Let's Play
+					    </script>
+					</section>
+
+				</section>
+				
+				
+				<!-- exiftool -->
+				<section>
+
+					<section data-markdown="">
+						<script type="text/template">
+							## exiftool
+						</script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### Installation
+
+					* Download: http://www.sno.phy.queensu.ca/~phil/exiftool/
+					* Anleitung: http://www.sno.phy.queensu.ca/~phil/exiftool/install.html
+					    </script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### Windows
+
+					* ```exiftool(-k).exe``` zu ```exiftool.exe``` umbennen und nach ```C:\Windows``` verschieben.
+					* exiftool kann nun von CMD überall aufgerufen werden
+
+					### Ubuntu
+
+					```
+					$ sudo apt-get install libimage-exiftool-perl perl-doc
+					```
+					    </script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### Test
+					In der Kommandozeile / CMD
+					```
+					$ exiftool -ver
+					```
+					Output sollte eine Versionsnummer sein wie "10.41" oder "10.10".
+					    </script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### Daten auslesen
+
+					Generelle Syntax: exiftool + Datei
+
+					```
+					$ exiftool [datei]
+					```
+
+					<hr>
+
+					Konkretes Beispiel
+
+					```
+					$ exiftool img/csm_Adolfseck_Hl_Familie.jpg
+					```
+					> Gibt Liste aus
+					    </script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### XMP-Daten auslesen
+
+					```
+					$ exiftool -X img/csm_Adolfseck_Hl_Familie.jpg
+					```
+					> Gibt RDF/XML aus
+					    </script>
+					</section>
+					
+					<section data-markdown="">
+					    <script type="text/template">
+					### Feld auslesen
+
+					Allgemein
+
+					```
+					$ exiftool [feldname] [datei]
+					```
+
+					<hr>
+
+					Generell: ```-xmp-[ns]:[feld]```
+					+ ns (Namensraum), zB. dc (Dublin Core)
+					+ feld (Feld im Namensraum), title
+					+ => ```-xmp-dc:title```
+
+					<hr>
+
+					Beispiel
+
+					```
+					$ exiftool -xmp-dc:creator img/csm_Adolfseck_Hl_Familie.jpg
+					```
+					    </script>
+					</section>
+					
+					<section data-markdown="">
+					    <script type="text/template">
+					### Mehrere Felder auslesen
+
+					Allgemein
+					```
+					$ exitool [feld1] [feld2] ... [feldn] [datei]
+					```
+
+					<hr>
+
+					Beispiel
+
+					```
+					$ exiftool -xmp-dc:creator -xmp-dc:title img/csm_Adolfseck_Hl_Familie.jpg
+					```
+
+					> Gibt ein Feld pro Zeile aus
+					    </script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### Gegenprobe
+
+					Feld aus eigenem Standard auslesen
+
+					Gleiches Prinzip: ```-xmp-[ns]:[feld]```
+					+ ns: cvma
+					+ feld: IconclassDescription
+					+ Beispiel
+
+					<hr>
+
+					```
+					$ exiftool -xmp-cvma:IconclassDescription img/csm_Adolfseck_Hl_Familie.jpg
+					```
+
+					<div class="fragment">
+						Befehl funktioniert nicht, weil der Namensraum unbekannt ist
+					</div>
+
+					    </script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### Konfiguration laden
+
+					Allgemein
+
+					```
+					$ exiftool -config [config-file] [befehl]
+					```
+					> Stellt sicher, dass Felder aus eigenen Vokabularen und Standards gelesen werden können
+
+					<hr>
+
+					Beispiel
+
+					```
+					$ exiftool -config conf/cvma.Exiftool_config img/csm_Adolfseck_Hl_Familie.jpg
+					```
+					> Felder aus dem CVMA-eigenen Standard werden nun gelesen
+
+					    </script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### Feld aus eigenem Standard auslesen
+
+					- Gleiches Prinzip wie beim Auslesen anderer Felder: ```-xmp-[ns]:[feld]```
+
+					- Beispiel
+					
+					```
+					$ exiftool -config conf/cvma.Exiftool_config -xmp-cvma:IconclassDescription img/csm_Adolfseck_Hl_Familie.jpg
+					```
+					    </script>
+					</section>
+					
+					<section data-markdown="">
+					    <script type="text/template">
+					### Konfiguration anschauen
+
+					Perl-Datei (exiftool ist eine Perl-Library)
+
+					```
+					%Image::ExifTool::UserDefined::cvma = (
+					GROUPS => { 0 => 'XMP', 1 => 'XMP-cvma', 2 => 'Image' },
+					NAMESPACE => { 'cvma' => 'http://www.corpusvitrearum.de/cvma/1.0/' },
+
+					...
+					IconclassDescription => { },
+					...
+					)
+					```
+
+					> CVMA-Namensraum und dazugehörige Felder werden definiert.
+
+					Konfiguration wird zum Auslesen und Manipulieren benötigt!
+					    </script>
+					</section>
+					
+					<section data-markdown="">
+					    <script type="text/template">
+					### Daten eingeben
+
+
+					Allgemein: ```-xmp-[ns]:[feld]=[wert] [datei]```
+					+ ns (Namensraum), zB. dc (Dublin Core)
+					+ feld (Feld im Namensraum), title
+					+ => ```-xmp-dc:title=Kirchenfenster```
+
+					<hr>
+
+					Beispiel
+
+					```
+					$ exiftool -xmp-dc:title=Kirchenfenster img/csm_Adolfseck_Hl_Familie.jpg
+					```
+
+					    </script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### Daten eingeben
+
+					Beispiel: eigenes Feld
+
+					* Namespace: cvma
+					* Feld: Column
+					* Wert: b
+
+					<hr>
+
+					<div class="fragment">
+						<pre><code>$ exiftool -config conf/cvma.ExifTool_config -xmp-cvma:Column=b img/csm_Adolfseck_Hl_Familie.jpg</code></pre>
+					</div>
+					    </script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### Mehrere Felder bearbeiten
+
+					Allgemein
+
+					```
+					$ exiftool -xmp-[ns]:[feld_1]=[wert] ... -xmp-[ns]:[feld_n]=[wert] [datei]
+					```
+
+					<hr>
+
+					Beispiel
+
+					```
+					$ exiftool -xmp-dc:title=Kirchenfenster -xmp-dc:creator=Me img/csm_Adolfseck_Hl_Familie.jpg
+					```
+					    </script>
+					</section>
+					
+					<section data-markdown="">
+					    <script type="text/template">
+					### Bags (Listen)
+
+					> Mehrere Einträge im selben Feld
+
+					In der Konfigurationsdatei muss das Feld als Bag deklariert sein
+
+					```
+					IconclassNotation => { List => 'Bag' },
+					```
+					    </script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### Bags schreiben
+
+					Allgemein
+
+					```
+					$ exiftool -config [config] -xmp-[ns]:[feld_x]=[wert_1] -xmp-[ns]:[feld_x]=[wert_2] [datei]
+					```
+
+					<hr>
+
+					Beispiel
+					```
+					$ exiftool -config conf/cvma.ExifTool_config -xmp-cvma:IconclassNotation=73A22 -xmp-cvma:IconclassNotation=SomethingDifferent img/csm_Adolfseck_Hl_Familie.jpg
+					```
+					    </script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					#### Fragen?
+					    </script>
+					</section>
+
+					<section data-markdown="">
+						<script type="text/template">
+							# [kahoot.it](https://www.kahoot.it)
+
+							Let's Play
+						</script>
+					</section>
+					
+				</section>
+				
+				<!-- Fotostation -->
+				<section>
+					
+					<section data-markdown="">
+					    <script type="text/template">
+					## FotoStation
+					    </script>
+					</section>
+					
+					<section data-markdown="">
+					    <script type="text/template">
+					### Allgemeines
+
+					* Windows / MacOS only
+					* Proprietäre Software
+					* Download: https://www.fotostation.com/download-thanks/
+					* 14-Tage Testversion bei Angabe einer E-Mail-Adresse
+
+					<hr>
+
+					Für die Faulen: [trash-mail.com](https://www.trash-mail.com)
+					    </script>
+					</section>
+					
+					<section data-markdown="">
+					    <script type="text/template">
+					## Fotostation: Pro und Kontra
+					    </script>
+					</section>
+					
+					<section data-markdown="">
+					    <script type="text/template">
+					### Pro
+
+					* Lichttisch (Bilderbrowser)
+					* Verschiedene Datei- und Metadatenansichten
+					* Konfigurierbare Ansichten und Exporte
+					* Eigene XMP-Standards konfigurierbar
+					* Eigene GUIs zur Metadateneingabe konfigurierbar
+					* Lesen, Schreiben und Indexieren von XMP-Daten
+					* Import und Export von Konfigurationen möglich, erleichtert Kollaboration
+					    </script>
+					</section>
+					
+					<section data-markdown="">
+					    <script type="text/template">
+					### Kontra
+
+					* Eingeschränkter Support beim Lizenzerwerb
+					* Proprietär und kostenpflichtig
+					* Einschränkung in der XMP-Konfiguration
+						- Bags of Structs können nicht geschrieben werden
+						- Erfordert ggf. Nachpflege von Daten
+					* Beeinträchtigte Leistung bei Netzwerkfreigaben bei Einzelplatzlizenzen (besonders bei TIF-Archiven)
+					    </script>
+					</section>
+					
+					<section data-markdown="">
+					    <script type="text/template">
+					### Warum Fotostation beim CVMA Potsdam?
+
+					* Anwendungsprofil, das derzeit nicht durch Free Open Source Software abgedeckt wird
+					* Einfach zu konfigurieren und zu pflegen
+					* Einfach zu benutzen
+					    </script>
+					</section>
+					
+					<section data-markdown="">
+					    <script type="text/template">
+					### Konfiguration: Import
+
+					* CVMA-Konfiguration: in ```conf/fotostation_config```
+					* Datei > Konfiguration verwalten > Konfiguration laden
+					* Wichtig: In den Root-Ordner der Konfiguration gehen. Zwei Ordner sollten sichtbar sein:
+						- ```Shared```
+						- ```Win```
+					* FotoStation neu starten, damit die Konfiguration geladen wird
+					* Export funktioniert ähnlich
+					    </script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### Metadaten bearbeiten
+
+					* Bild auswählen
+					* Metadaten bearbeiten klicken
+						- Werkzeugleiste
+						- Rechtsklick > Metadaten bearbeiten
+						- Ctrl + T
+						</script>
+					</section>
+					
+					<section data-markdown="">
+					    <script type="text/template">
+					![FotoStation: Metadateneditor öffnen](../doc/img/fotostation/Fotostation_Thumbnail.png)
+						</script>
+					</section>
+					
+					<section data-markdown="">
+					    <script type="text/template">
+					![FotoStation: Metadateneditor](../doc/img/fotostation/Fotostation_Metadata.png)
+						</script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					## Konfiguration & Workflow
+						</script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### Neues Feld definieren
+
+					* Vorhandene Felder in Fotostation in aktueller Konfiuration anzeigen
+						- Datei > Metadaten (siehe links) > Konfiguration... > Konfigurieren
+					    </script>
+					</section>
+					
+					<section data-markdown="">
+					    <script type="text/template">
+					![Fotostation: Vorhandene Metadatenfelder](../doc/img/fotostation/Fotostation_Metadata_configure.png)
+					    </script>
+					</section>
+					
+					<section data-markdown="">
+					    <script type="text/template">
+					### Metadatenkonfiguration
+
+					siehe ```Shared/Metadata/MedataConfiguration.xml```
+
+					```
+					<Namespace url="http://www.corpusvitrearum.de/cvma/1.0/" name="cvma" alias="cvma"/>
+					```
+
+					<hr>
+
+					```
+					<Field valueType="Text" guiLabel="Iconclass_Beschreibung" maxSize="25600" id="506" ns="cvma" fieldType="Single" name="IconclassDescription" isMultiline="true"/>
+					<Field valueType="Text" guiLabel="Iconclass_Notation" maxSize="256" id="507" ns="cvma" fieldType="Bag" name="IconclassNotation" isMultiline="false"/>
+					```
+					    </script>
+					</section>
+					
+					<section data-markdown="">
+
+					<small>
+						<script type="text/template">
+					| Attribut | Erklärung |
+					| -------- | --------- |
+					| valueType | Text, Boolean, Integer, Float |
+					| guiLabel| Bezeichnung des Feldes in der Fotostation GUI |
+					| maxSize| Maximale Zeichenlänge |
+					| id| Eindeutiger Identifikator des Feldes als Zahl |
+					| ns| Namensraum. Muss in der Konfiguration definiert sein! |
+					| fieldType | Single, Bag |
+					| name| Name des Feldes im Metadatenstandard |
+					| isMultiline| true, false |
+						</script>
+					</small>
+					</section>
+					
+					<section data-markdown="">
+					    <script type="text/template">
+							## Neue Felder anlegen
+
+							Neues Textfeld im cvma-Namensraum anlegen
+							+ valueType: Text
+							+ guiLabel: Workshop
+							+ maxSize: 256
+							+ id: 777
+							+ ns: cvma
+							+ fieldType: Single
+							+ name: Workshop
+							+ isMultiline: false
+					    </script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### Neues Feld
+
+					```
+					<Field valueType="Text" guiLabel="Workshop" maxSize="256" id="777" ns="cvma" fieldType="Single" name="Workshop" isMultiline="false"/>
+					```
+					    </script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### Feld aktivieren
+
+					* Konfiguration erneut importieren und Fotostation anschließend neu starten
+						- Überprüfen, ob neues Feld geladen wurde
+						- Datei > Metadaten (siehe links) > Konfiguration... > Konfigurieren
+					    </script>
+					</section>
+					
+					<section data-markdown="">
+					    <script type="text/template">
+					### Feld im Editor anlegen
+
+					- Metadaten eines Bildes bearbeiten
+					- Bleistift-Button unten links drücken
+
+					<img src="../doc/img/fotostation/Fotostation_Metadata_edit_view.png" alt="Fotostation: Metadatenbearbeitung anpassen" style="max-height: 400px;">
+							
+					    </script>
+					</section>
+					
+					<section data-markdown="">
+					    <script type="text/template">
+					### Feld im Editor anlegen
+
+					![Fotostation: Neues Feld hinzufügen](../doc/img/fotostation/Fotostation_Metadata_edit_view_add_field.png)
+					    </script>
+					</section>
+					
+					<section data-markdown="">
+					    <script type="text/template">
+					![Fotostation: Feld hinzugefügt](../doc/img/fotostation/Fotostation_Metadata_edit_view_field_added.png)
+
+						</script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### Neues Feld benutzen
+
+					<img src="../doc/img/fotostation/Fotostation_Metadata_new_field_value.png" alt="Neues Feld benutzen" style="max-height: 500px;">
+						</script>
+					</section>
+					
+					<section data-markdown="">
+					    <script type="text/template">
+						### Kontrollierte Vokabulare
+
+						Neues cvma-Feldanlegen
+
+						```Shared/Metadata/MedataConfiguration.xml```
+
+						- valueType: Text
+						- guiLabel: Eindruecke
+						- maxSize: 256
+						- id: 778
+						- ns: cvma
+						- fieldType: Bag
+						- name: Impressions
+						- isMultiline: false
+
+					    </script>
+					</section>
+					
+					<section data-markdown="">
+					    <script type="text/template">
+					### Neues Feld
+
+					```
+					<Field valueType="Text" guiLabel="Eindruecke" maxSize="256" id="778" ns="cvma" fieldType="Bag" name="Impressions" isMultiline="false"/>
+					```
+
+					Konfiguration neu laden
+					    </script>
+					</section>
+					
+					<section data-markdown="">
+					    <script type="text/template">
+					![Fotostation: Neues Bag-Feld hinzufügen](../doc/img/fotostation/Fotostation_Metadata_edit_view_add_field_bag.png)
+						</script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### Feld konfigurieren
+
+					![Fotostation: Feld konfigurieren](../doc/img/fotostation/Fotostation_Metadata_edit_view_configure_field.png)
+
+						</script>
+					</section>
+					
+					<section data-markdown="">
+					    <script type="text/template">
+					### Optionen
+
+					+ Element hat Textvorschläge
+						- Textvorschläge bearbeiten
+						- Textvorschläge automatisch ergänzen
+						- Textvorschläge sortieren
+					+ Textfeld bearbeiten
+						- True: Freitext eingaben möglich
+						- False: Nur Werte innerhalb der Vorschlagsliste
+					    </script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### Vokabular verwalten (FS)
+
+					Textvorschläge bearbeiten aktivieren
+
+					<img src="../doc/img/fotostation/Fotostation_Metadata_edit_view_field_added_bag.png" alt="Fotostation: Vorschläge bearbeiten" style="max-height: 450px;">
+							
+						</script>
+					</section>
+					
+					<section data-markdown="">
+					    <script type="text/template">
+						## Vokabular verwalten (FS)
+						![Fotostation: Vorschläge hinzufügen](../doc/img/fotostation/Fotostation_Metadata_suggestions.png)
+
+						ggf. Bearbeitungsfunktion wieder deaktivieren
+						</script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### Vokabular verwalten (Quick Lists)
+
+					-  Vorschlagslisten liegen im folgenden Verzeichnis der Fotostation-Konfiguration: ```Win/Backup/Metadata/Quick Lists```
+					- Dort dann die ```ql_[feld_id].txt``` bearbeiten/anlegen
+					- Beispiel: ```ql_778.txt``` bearbeiten/anlegen
+					- Folgende Werte hinzufügen (jede Zeile ein Wert)
+
+					```
+					Super
+					Toll
+					Wow
+					Meh
+					```
+
+					- Speichern und Konfiguration neu laden
+					    </script>
+					</section>
+					
+					<section data-markdown="">
+					    <script type="text/template">
+					### Daten eingeben
+					    </script>
+					</section>
+					
+					<section data-markdown="">
+					    <script type="text/template">
+					### Fragen?
+					    </script>
+					</section>
+
+				</section>
+
+
+				<!-- Fotostation Test -->
+				<section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### Kompatitbilitätsprüfung
+
+					* Kompatibilität zu exiftool überprüfen
+					* Überprüfen, ob die Daten geschrieben wurden
+					    </script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### Test mit exiftool
+
+					* Voraussetzung: Das neue Feld in die exiftool-Konfiguration hinzufügen
+					- ```conf/cvma.ExifTool_config``` mit Texteditor bearbeiten
+					- ```Workshop => { }``` in das cvma-Array hinzufügen
+					- Speichern
+
+					```
+					$ exiftool -config conf/cvma.ExifTool_config -xmp-cvma:Workshop img/csm_Adolfseck_Hl_Familie.jpg
+					```
+					    </script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### Test mit Notepad++ / Atom
+
+					![Notepad++: XMP-Daten betrachten](../doc/img/notepad/notepad_check_xmp.png)
+						</script>
+					</section>
+
+					<section data-markdown="">
+						<script type="text/template">
+							# [kahoot.it](https://www.kahoot.it)
+
+							Let's Play
+						</script>
+					</section>
+
+				</section>
+
+				<section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					## exiftoolGUI
+					    </script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### Allgemeines
+
+					* exiftoolGUI (Windows only)
+						- Download: http://u88.n24.queensu.ca/~bogdan/exiftoolgui516.zip
+
+					<hr>
+
+					* pyExiftoolGUI (plattformunabhängig)
+						- Download: https://hvdwolf.github.io/pyExifToolGUI/
+						- Unstable
+						- Nicht konfigurierbar
+					    </script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### Vorbereitung
+
+					* exiftool installieren
+					* exiftool-Konfiguration muss im PATH angegeben sein
+					* exiftool-Konfiguration kann sonst **nicht** von exiftoolGUI benutzt werden
+					* Mit Terminal/CMD kopieren
+
+					```
+					$ cp conf/cvma.ExifTool_config C:\Windows
+					```
+						</script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### exiftoolGUI Benutzung
+
+					Rechte Spalte > XMP
+
+					<img src="../doc/img/exiftoolGUI/exiftoolGUI_xmp_view.png" alt="exiftoolGUI: XMP-Daten anzeigen" style="max-height: 450px;">
+
+					    </script>
+					</section>
+					
+					<section data-markdown="">
+					    <script type="text/template">
+					### Metadaten bearbeiten
+
+					- Feld auswählen > Rechtsklick > "Add tag to workspace"
+					- Beispiel: *Workshop*
+
+					<img src="../doc/img/exiftoolGUI/exiftoolGUI_add_to_workspace.png" alt="exiftoolGUI: Add to Workspace" style="max-height: 450px;">
+					    </script>
+					</section>
+					
+					<section data-markdown="">
+					    <script type="text/template">
+					### Wert bearbeiten
+
+					- Im Workspace-Reiter unten einen neuen Wert eingeben
+						+ Eingabe mit Enter bestätigen
+						+ Save-Button klicken
+					<img src="../doc/img/exiftoolGUI/exiftoolGUI_edit_value.png" alt="exiftoolGUI: Wert bearbeiten" style="max-height: 400px;">
+					    </script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+							![exiftoolGUI: Wert bearbeitet, noch nicht gespeichert](../doc/img/exiftoolGUI/exiftoolGUI_value_edited_not_saved.png)
+						</script>
+					</section>
+					
+					<section data-markdown="">
+					    <script type="text/template">
+					### Fehler?
+
+					![exiftoolGUI: Fehler](../doc/img/exiftoolGUI/exiftoolGUI_config_error.png)
+
+					>  Wenn Konfiguration nicht in ```C:\Windows``` hinterlegt wurde, gibt es eine Fehlermeldung
+
+						</script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### Erfolg
+
+					<img src="../doc/img/exiftoolGUI/exiftoolGUI_value_edited_and_saved.png" alt="exiftoolGUI: Wert bearbeitet, und gespeichert" style="max-height: 500px;">
+
+						</script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### Workspace anpassen
+
+					Program > Workspace Manager
+					<img src="../doc/img/exiftoolGUI/exiftoolGUI_workspace_manager.png" alt="exiftoolGUI: Workspace Manager" style="max-height: 500px;">
+					    </script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### XMP-Felder anpassen
+
+					![exiftoolGUI: Workspace Manager anpassen](../doc/img/exiftoolGUI/exiftoolGUI_workspace_manager_change.png)
+
+						</script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### Bearbeitungsansicht aktualisiert
+
+					<img src="../doc/img/exiftoolGUI/exiftoolGUI_workspace_label_changed.png" alt="exiftoolGUI: Label geändert" style="max-height: 500px;">
+						</script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### Fragen?
+					    </script>
+					</section>
+
+				</section>
+
+				<section>
+					<section data-markdown="">
+						<script type="text/template">
+					## Tests
+						</script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+### exiftool
+
+```
+$ exiftool -config conf/cvma.ExifTool_config -xmp-cvma:Workshop img/csm_Adolfseck_Hl_Familie.jpg
+```
+
+> Workshop: DHd 2017 with exiftoolGUI
+					    </script>
+					</section>
+
+					<section data-markdown="">
+					    <script type="text/template">
+					### Fotostation
+
+					![exiftoolGUI: Eingabe mit Fotostation überprüfen](../doc/img/fotostation/Fotostation_Metadata_check_exiftoolGUI.png)
+						</script>
+					</section>
+				</section>
+
+				<section data-markdown="">
+					<script type="text/template">
+						# [kahoot.it](https://www.kahoot.it)
+
+						Let's Play
+					</script>
+				</section>
+
+			</div>
+
+			<div class="footer">
+				<a href="https://creativecommons.org/licenses/by/4.0/">
+					<img src="img/cc-by.png" alt="CC-BY" id="cc-logo">
+				</a>
+				Oliver Pohl, Torsten Schrade: Nachhaltiges Metadatenmanagement mit exiftool und FotoStation
+			</div>
+
+		</div>
+
+
+
+
+
+	<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				chart: {
+					defaults: {
+						global: {
+							title: { fontColor: "#FFF" },
+						},
+						legend: {
+							labels: { fontColor: "#FFF" },
+						},
+						scale: {
+							scaleLabel: { fontColor: "#FFF" },
+							gridLines: { color: "#FFF", zeroLineColor: "#FFF" },
+							ticks: { fontColor: "#FFF" },
+						}
+					},
+					line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ]},
+					bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+					pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+					radar: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+				},
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/chart/Chart.min.js' },
+					{ src: 'plugin/chart/csv2chart.js' }
+				]
+			});
+		</script>
+	</body>
+</html>

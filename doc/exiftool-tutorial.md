@@ -143,6 +143,11 @@ $ exiftool -X img/csm_Adolfseck_Hl_Familie.jpg
     ```
     $ exiftool -xmp-dc:title=Kirchenfenster img/csm_Adolfseck_Hl_Familie.jpg
     ```
+
+    - Beispiel (mit Config)
+    ```
+    $ exiftool -config conf/cvma.ExifTool_config -xmp-cvma:Column=b img/csm_Adolfseck_Hl_Familie.jpg
+    ```
     
 * Mehrere Felder
 
@@ -158,7 +163,7 @@ $ exiftool -X img/csm_Adolfseck_Hl_Familie.jpg
     
 * Bags (Listen)
 
-    > Mehrere Einträge im selbsen Feld
+    > Mehrere Einträge im selben Feld
     
     - In der Konfigurationsdatei muss das Feld als Bag deklariert sein
     ```

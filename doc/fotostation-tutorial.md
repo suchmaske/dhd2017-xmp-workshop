@@ -67,7 +67,7 @@
   - Datei > Metadaten (siehe links) > Konfiguration... > Konfigurieren
   ![Fotostation: Vorhandene Metadatenfelder](img/fotostation/Fotostation_Metadata_configure.png)
 
-* Metadatenkonfiguratiom ```Shared/Metadata/MedataConfiguration.xml```
+* Metadatenkonfiguration ```Shared/Metadata/MedataConfiguration.xml```
   - Namensräume werden deklariert
   ```  <Namespace url="http://www.corpusvitrearum.de/cvma/1.0/" name="cvma" alias="cvma"/>
   ```
@@ -185,7 +185,7 @@
 * Voraussetzung: Das neue Feld in die exiftool-Konfiguration hinzufügen
   - ```conf/cvma.ExifTool_config``` mit Texteditor bearbeiten
   - ```Workshop => { }``` in das cvma-Array hinzufügen
-  - Speichern.
+  - Speichern
 
 * Mit dem Terminal/CMD testen:
 ```

@@ -9,7 +9,7 @@
   - Download: http://u88.n24.queensu.ca/~bogdan/exiftoolgui516.zip
 * pyExiftoolGUI (plattformunabhängig)
   - Download: https://hvdwolf.github.io/pyExifToolGUI/
-  - Unstable
+  - Unstable (nicht konfigurierbar)
 
 ## exiftoolGUI
 
