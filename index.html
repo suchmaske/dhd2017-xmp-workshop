@@ -1,0 +1,230 @@
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <title>Nachhaltiges Metadatenmanagement mit XMP, exiftool und FotoStation</title>
+
+</head>
+
+<body>
+
+<nav class="nav">
+
+    <div class="nav-center">
+
+    </div>
+
+    <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
+    <!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
+    <span class="nav-toggle" onclick="toggleBurger()">
+        <span></span>
+        <span></span>
+        <span></span>
+     </span>
+
+    <!-- This "nav-menu" is hidden on mobile -->
+    <!-- Add the modifier "is-active" to display it on mobile -->
+    <div class="nav-right nav-menu">
+        <a class="nav-item" href="#">
+            Home
+        </a>
+        <a class="nav-item" href="https://github.com/suchmaske/dhd2017-xmp-workshop" target="_blank">
+          <span class="icon">
+            <i class="fa fa-github"></i>
+          </span>
+          Github
+        </a>
+        <a class="nav-item" href="https://github.com/suchmaske/dhd2017-xmp-workshop/tree/master/doc" target="_blank">
+            Docs
+        </a>
+        <a class="nav-item">
+            Slides
+        </a>
+
+        <span class="nav-item">
+          <a class="button is-primary" href="https://github.com/suchmaske/dhd2017-xmp-workshop/archive/master.zip">
+            <span class="icon">
+              <i class="fa fa-download"></i>
+            </span>
+            <span>Download</span>
+          </a>
+    </span>
+    </div>
+</nav>
+
+
+<section class="hero is-primary">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                Nachhaltiges Metadatenmanagement mit XMP, exiftool und FotoStation
+            </h1>
+            <h2 class="subtitle">
+                <p>DHd 2017, 14.02.2017</p>
+                <p>Oliver Pohl, Torsten Schrade</p>
+            </h2>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="heading">
+            <h1 class="title">Tools</h1>
+            <h2 class="subtitle">Verwendete Software</h2>
+        </div>
+
+        <div class="columns">
+
+            <div class="column">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">
+                            exiftool
+                        </p>
+                    </header>
+                    <div class="card-content">
+                        <div class="content">
+                            Kommandozeilentool zum Bearbeiten von EXIF & XMP-Daten
+                        </div>
+                    </div>
+                    <footer class="card-footer">
+                        <span class="card-footer-item">
+                            <i class="fa fa-windows"></i>
+                            <i class="fa fa-apple"></i>
+                            <i class="fa fa-linux"></i>
+                        </span>
+                        <a class="card-footer-item" href="http://www.sno.phy.queensu.ca/~phil/exiftool/">
+                            Website
+                        </a>
+                        <a class="card-footer-item" href="https://github.com/suchmaske/dhd2017-xmp-workshop/blob/master/doc/exiftool-tutorial.md">
+                            Tutorial
+                        </a>
+                    </footer>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">
+                            exiftoolGUI
+                        </p>
+                    </header>
+                    <div class="card-content">
+                        <div class="content">
+                            Graphische Oberfläche für exiftool
+                        </div>
+                    </div>
+                    <footer class="card-footer">
+                        <span class="card-footer-item">
+                            <i class="fa fa-windows"></i>
+                        </span>
+                        <a class="card-footer-item" href="http://u88.n24.queensu.ca/~bogdan/">
+                            Website
+                        </a>
+                        <a class="card-footer-item" href="https://github.com/suchmaske/dhd2017-xmp-workshop/blob/master/doc/exiftoolGUI-tutorial.md">
+                            Tutorial
+                        </a>
+                    </footer>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">
+                            FotoStation
+                        </p>
+                    </header>
+                    <div class="card-content">
+                        <div class="content">
+                            Bild- und Metadatenmanagement. Konfigurierbare GUIs und Metadatenstandards
+                        </div>
+                    </div>
+                    <footer class="card-footer">
+                        <span class="card-footer-item">
+                            <i class="fa fa-windows"></i>
+                            <i class="fa fa-apple"></i>
+                        </span>
+                        <a class="card-footer-item" href="https://www.fotostation.com/download-thanks/">
+                            Website
+                        </a>
+                        <a class="card-footer-item" href="https://github.com/suchmaske/dhd2017-xmp-workshop/blob/master/doc/fotostation-tutorial.md">
+                            Tutorial
+                        </a>
+                    </footer>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="hero is-light">
+    <div class="hero-body">
+        <div class="container">
+            <p class="title">Slides</p>
+            <p class="subtitle">
+                <a href="https://suchmaske.github.io/dhd2017-xmp-workshop/html" target="_blank">
+                    https://suchmaske.github.io/dhd2017-xmp-workshop/html
+                </a>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="heading">
+            <h1 class="title">
+                Source Code
+                <span class="icon"><i class="fa fa-github"></i></span>
+            </h1>
+        </div>
+
+        <div class="box">
+            <pre><code>git clone https://github.com/suchmaske/dhd2017-xmp-workshop.git</code></pre>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="content has-text-centered">
+            <p>
+                Inhalte von <a href="http://www.bbaw.de/die-akademie/mitarbeiter/opohl">Oliver Pohl</a> und <a href="http://www.adwmainz.de/mitarbeiter/profil/torsten-schrade.html">Torsten Schrade</a>.
+                <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+            </p>
+            <p>
+                <a class="icon" href="https://github.com/suchmaske/dhd2017-xmp-workshop">
+                    <i class="fa fa-github"></i>
+                </a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+</body>
+
+
+
+
+
+<script>
+
+    function toggleBurger() {
+
+        var menu = document.querySelector(".nav-menu");
+        menu.classList.toggle("is-active");
+
+    }
+
+</script>
+
+</html>

@@ -51,7 +51,8 @@
 # an ExifTool family 1 group name of 'XMP-xxx'.
 %Image::ExifTool::UserDefined::cvma = (
     GROUPS => { 0 => 'XMP', 1 => 'XMP-cvma', 2 => 'Image' },
-    NAMESPACE => { 'cvma' => 'http://www.corpusvitrearum.de/cvma/1.0/' },
+    #NAMESPACE => { 'cvma' => 'http://www.corpusvitrearum.de/cvma/1.0/' },
+    NAMESPACE => { 'cvma' => 'https://lod.academy/cvma/ns/xmp/' },
     WRITABLE => 'string',
     Volume => { },
     Figure => { },

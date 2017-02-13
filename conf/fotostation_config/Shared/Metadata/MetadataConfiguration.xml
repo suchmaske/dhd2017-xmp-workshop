@@ -20,7 +20,11 @@
   <Namespace url="http://creativecommons.org/ns#" name="Creative Commons" alias="cc"/>
   <Namespace url="http://ns.useplus.org/ldf/xmp/1.0/" name="PLUS" alias="plus"/>
   <Namespace url="http://ns.adobe.com/DICOM/" name="DICOM" alias="DICOM"/>
+  <!--
   <Namespace url="http://www.corpusvitrearum.de/cvma/1.0/" name="cvma" alias="cvma"/>
+  -->
+  <Namespace url="https://lod.academy/cvma/ns/xmp/" name="cvma" alias="cvma"/>
+
  </Namespaces>
  <Groups>
   <Group name="IPTC Core">
@@ -296,9 +300,6 @@
   <Field valueType="Text" guiLabel="Person_Koerperschaft___Rolle" maxSize="256" id="523" ns="cvma" fieldType="Single" name="EntityRole" structName="RelatedEntities" isMultiline="false"/>
   <Field valueType="Text" adobeName="Creator Tool" guiLabel="Originating Program" maxSize="32" id="65" ns="xmp" fieldType="Single" name="CreatorTool" isMultiline="false"/>
   <Field valueType="Text" guiLabel="Aufnahmedatum (Helper)" maxSize="256" id="600" ns="cvma" fieldType="Single" name="CreateDateHelper" regExp="^([0-9]{4})(((\-(1[0-2]|0[1-9]))(\-(3[01]|0[1-9]|[12][0-9]))?)(T([0-1][0-9]|2[0-4]):([0-5][0-9]):([0-5][0-9])((\+([0-1][0-9]|2[0-4]):([0-5][0-9]))|(\.[0-9]+))?)?)?$" isMultiline="false"/>
-
-  <Field valueType="Text" guiLabel="Workshop" maxSize="256" id="777" ns="cvma" fieldType="Single" name="Workshop" isMultiline="false"/>
-  <Field valueType="Text" guiLabel="Eindruecke" maxSize="256" id="778" ns="cvma" fieldType="Bag" name="Impressions" isMultiline="false"/>
 
  </Fields>
 
