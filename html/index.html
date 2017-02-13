@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Nachhaltiges Metadatenmanagement mit exiftool und FotoStation</title>
+		<title>Nachhaltiges Metadatenmanagement mit XMP, exiftool und FotoStation</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/bbaw.css">
@@ -40,7 +40,7 @@
 				<!-- Title -->
 				<section>
 
-					Nachhaltiges Metadatenmanagement mit exiftool und FotoStation
+					Nachhaltiges Metadatenmanagement mit XMP, exiftool und FotoStation
 
 					<p>
 						<small>DHd 2017, 14.02.2017</small>
@@ -111,7 +111,7 @@
 					* Interpretierbarkeit der Originaldateien nicht gefährden
 					    </script>
 					</section>
-					
+
 					<section>
 
 						<h2>Dateien und Metadaten</h2>
@@ -249,8 +249,8 @@
 					</section>
 
 				</section>
-				
-				
+
+
 				<!-- exiftool -->
 				<section>
 
@@ -326,7 +326,7 @@
 					> Gibt RDF/XML aus
 					    </script>
 					</section>
-					
+
 					<section data-markdown="">
 					    <script type="text/template">
 					### Feld auslesen
@@ -353,7 +353,7 @@
 					```
 					    </script>
 					</section>
-					
+
 					<section data-markdown="">
 					    <script type="text/template">
 					### Mehrere Felder auslesen
@@ -429,13 +429,13 @@
 					- Gleiches Prinzip wie beim Auslesen anderer Felder: ```-xmp-[ns]:[feld]```
 
 					- Beispiel
-					
+
 					```
 					$ exiftool -config conf/cvma.Exiftool_config -xmp-cvma:IconclassDescription img/csm_Adolfseck_Hl_Familie.jpg
 					```
 					    </script>
 					</section>
-					
+
 					<section data-markdown="">
 					    <script type="text/template">
 					### Konfiguration anschauen
@@ -458,7 +458,7 @@
 					Konfiguration wird zum Auslesen und Manipulieren benötigt!
 					    </script>
 					</section>
-					
+
 					<section data-markdown="">
 					    <script type="text/template">
 					### Daten eingeben
@@ -517,7 +517,7 @@
 					```
 					    </script>
 					</section>
-					
+
 					<section data-markdown="">
 					    <script type="text/template">
 					### Bags (Listen)
@@ -564,18 +564,18 @@
 							Let's Play
 						</script>
 					</section>
-					
+
 				</section>
-				
+
 				<!-- Fotostation -->
 				<section>
-					
+
 					<section data-markdown="">
 					    <script type="text/template">
 					## FotoStation
 					    </script>
 					</section>
-					
+
 					<section data-markdown="">
 					    <script type="text/template">
 					### Allgemeines
@@ -590,13 +590,13 @@
 					Für die Faulen: [trash-mail.com](https://www.trash-mail.com)
 					    </script>
 					</section>
-					
+
 					<section data-markdown="">
 					    <script type="text/template">
 					## Fotostation: Pro und Kontra
 					    </script>
 					</section>
-					
+
 					<section data-markdown="">
 					    <script type="text/template">
 					### Pro
@@ -610,7 +610,7 @@
 					* Import und Export von Konfigurationen möglich, erleichtert Kollaboration
 					    </script>
 					</section>
-					
+
 					<section data-markdown="">
 					    <script type="text/template">
 					### Kontra
@@ -623,7 +623,7 @@
 					* Beeinträchtigte Leistung bei Netzwerkfreigaben bei Einzelplatzlizenzen (besonders bei TIF-Archiven)
 					    </script>
 					</section>
-					
+
 					<section data-markdown="">
 					    <script type="text/template">
 					### Warum Fotostation beim CVMA Potsdam?
@@ -633,7 +633,7 @@
 					* Einfach zu benutzen
 					    </script>
 					</section>
-					
+
 					<section data-markdown="">
 					    <script type="text/template">
 					### Konfiguration: Import
@@ -659,13 +659,13 @@
 						- Ctrl + T
 						</script>
 					</section>
-					
+
 					<section data-markdown="">
 					    <script type="text/template">
 					![FotoStation: Metadateneditor öffnen](../doc/img/fotostation/Fotostation_Thumbnail.png)
 						</script>
 					</section>
-					
+
 					<section data-markdown="">
 					    <script type="text/template">
 					![FotoStation: Metadateneditor](../doc/img/fotostation/Fotostation_Metadata.png)
@@ -686,13 +686,13 @@
 						- Datei > Metadaten (siehe links) > Konfiguration... > Konfigurieren
 					    </script>
 					</section>
-					
+
 					<section data-markdown="">
 					    <script type="text/template">
 					![Fotostation: Vorhandene Metadatenfelder](../doc/img/fotostation/Fotostation_Metadata_configure.png)
 					    </script>
 					</section>
-					
+
 					<section data-markdown="">
 					    <script type="text/template">
 					### Metadatenkonfiguration
@@ -711,7 +711,7 @@
 					```
 					    </script>
 					</section>
-					
+
 					<section data-markdown="">
 
 					<small>
@@ -729,7 +729,7 @@
 						</script>
 					</small>
 					</section>
-					
+
 					<section data-markdown="">
 					    <script type="text/template">
 							## Neue Felder anlegen
@@ -765,7 +765,7 @@
 						- Datei > Metadaten (siehe links) > Konfiguration... > Konfigurieren
 					    </script>
 					</section>
-					
+
 					<section data-markdown="">
 					    <script type="text/template">
 					### Feld im Editor anlegen
@@ -774,10 +774,10 @@
 					- Bleistift-Button unten links drücken
 
 					<img src="../doc/img/fotostation/Fotostation_Metadata_edit_view.png" alt="Fotostation: Metadatenbearbeitung anpassen" style="max-height: 400px;">
-							
+
 					    </script>
 					</section>
-					
+
 					<section data-markdown="">
 					    <script type="text/template">
 					### Feld im Editor anlegen
@@ -785,7 +785,7 @@
 					![Fotostation: Neues Feld hinzufügen](../doc/img/fotostation/Fotostation_Metadata_edit_view_add_field.png)
 					    </script>
 					</section>
-					
+
 					<section data-markdown="">
 					    <script type="text/template">
 					![Fotostation: Feld hinzugefügt](../doc/img/fotostation/Fotostation_Metadata_edit_view_field_added.png)
@@ -800,7 +800,7 @@
 					<img src="../doc/img/fotostation/Fotostation_Metadata_new_field_value.png" alt="Neues Feld benutzen" style="max-height: 500px;">
 						</script>
 					</section>
-					
+
 					<section data-markdown="">
 					    <script type="text/template">
 						### Kontrollierte Vokabulare
@@ -820,7 +820,7 @@
 
 					    </script>
 					</section>
-					
+
 					<section data-markdown="">
 					    <script type="text/template">
 					### Neues Feld
@@ -832,7 +832,7 @@
 					Konfiguration neu laden
 					    </script>
 					</section>
-					
+
 					<section data-markdown="">
 					    <script type="text/template">
 					![Fotostation: Neues Bag-Feld hinzufügen](../doc/img/fotostation/Fotostation_Metadata_edit_view_add_field_bag.png)
@@ -847,7 +847,7 @@
 
 						</script>
 					</section>
-					
+
 					<section data-markdown="">
 					    <script type="text/template">
 					### Optionen
@@ -869,10 +869,10 @@
 					Textvorschläge bearbeiten aktivieren
 
 					<img src="../doc/img/fotostation/Fotostation_Metadata_edit_view_field_added_bag.png" alt="Fotostation: Vorschläge bearbeiten" style="max-height: 450px;">
-							
+
 						</script>
 					</section>
-					
+
 					<section data-markdown="">
 					    <script type="text/template">
 						## Vokabular verwalten (FS)
@@ -901,13 +901,13 @@
 					- Speichern und Konfiguration neu laden
 					    </script>
 					</section>
-					
+
 					<section data-markdown="">
 					    <script type="text/template">
 					### Daten eingeben
 					    </script>
 					</section>
-					
+
 					<section data-markdown="">
 					    <script type="text/template">
 					### Fragen?
@@ -1011,7 +1011,7 @@
 
 					    </script>
 					</section>
-					
+
 					<section data-markdown="">
 					    <script type="text/template">
 					### Metadaten bearbeiten
@@ -1022,7 +1022,7 @@
 					<img src="../doc/img/exiftoolGUI/exiftoolGUI_add_to_workspace.png" alt="exiftoolGUI: Add to Workspace" style="max-height: 450px;">
 					    </script>
 					</section>
-					
+
 					<section data-markdown="">
 					    <script type="text/template">
 					### Wert bearbeiten
@@ -1039,7 +1039,7 @@
 							![exiftoolGUI: Wert bearbeitet, noch nicht gespeichert](../doc/img/exiftoolGUI/exiftoolGUI_value_edited_not_saved.png)
 						</script>
 					</section>
-					
+
 					<section data-markdown="">
 					    <script type="text/template">
 					### Fehler?
@@ -1157,7 +1157,7 @@ $ exiftool -config conf/cvma.ExifTool_config -xmp-cvma:Workshop img/csm_Adolfsec
 				<a href="https://creativecommons.org/licenses/by/4.0/">
 					<img src="img/cc-by.png" alt="CC-BY" id="cc-logo">
 				</a>
-				Oliver Pohl, Torsten Schrade: Nachhaltiges Metadatenmanagement mit exiftool und FotoStation
+				Oliver Pohl, Torsten Schrade: Nachhaltiges Metadatenmanagement mit XMP, exiftool und FotoStation
 				<a href="https://suchmaske.github.io/dhd2017-xmp-workshop/html/">goo.gl/LWslZ7</a>
 			</div>
 
