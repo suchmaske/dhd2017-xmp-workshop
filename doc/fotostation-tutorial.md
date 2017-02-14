@@ -69,7 +69,7 @@
 
 * Metadatenkonfiguration ```Shared/Metadata/MedataConfiguration.xml```
   - Namensräume werden deklariert
-  ```  <Namespace url="http://www.corpusvitrearum.de/cvma/1.0/" name="cvma" alias="cvma"/>
+  ```  <Namespace url="https://lod.academy/cvma/ns/xmp/" name="cvma" alias="cvma"/>
   ```
   - Felder werden definiert
   ```
